@@ -1,0 +1,228 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a different styling theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #0086b3;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.company-cards {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.card-slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.chat-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #25d366; /* WhatsApp green color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Darker shade of WhatsApp green */
+    color: white;
+}
+
+.team-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+.team-members-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.team-member p {
+    font-size: 16px;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    .nav {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .card-slider {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        margin: 10px 0;
+    }
+    
+    .chat-section {
+        padding: 10px;
+    }
+
+    .whatsapp-button {
+        padding: 8px 16px;
+    }
+    
+    .team-member {
+        flex: 0 0 calc(50% - 20px);
+        margin: 10px 0;
+    }
+}
