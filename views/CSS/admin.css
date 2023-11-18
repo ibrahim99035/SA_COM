@@ -117,3 +117,19 @@ h3, p {
         max-height: none;
     }
 }
+
+@media (max-width: 768px) {
+    /* Stacked layout for forms on mobile devices */
+    #teamForm, #cardsForm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Reset margin for forms on mobile devices */
+    #teamForm label,
+    #cardsForm label,
+    #teamForm input,
+    #cardsForm input {
+        margin: 0;
+    }
+}
