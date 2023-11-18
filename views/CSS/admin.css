@@ -1,0 +1,107 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a similar styling theme to the main website */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(10, 18, 56, 0.432);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style for forms */
+form {
+    max-width: 400px; /* Set a maximum width for the forms */
+    margin: 0 auto; /* Center the forms horizontally */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="file"] {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for data sections */
+section {
+    max-width: 800px; /* Set a maximum width for the data sections */
+    margin: 20px auto; /* Center the data sections horizontally */
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Common Styles for Image Containers */
+.team-member,
+.card {
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for Team Members */
+.team-member {
+  text-align: center;
+}
+
+.team-member-image {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10px;
+}
+
+/* Styles for Cards */
+.card {
+  text-align: center;
+}
+
+.card-image {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 10px;
+}
+
+/* Additional Styles for Text Elements */
+h3, p {
+  margin: 10px 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/admin.css">
+    <title>Admin Interface</title>
+</head>
+<body>
+    <h1>Admin Interface</h1>
+
+    <div style="display: flex; gap: 20px;">
+        <form id="teamForm">
+            <h2>Team Member Form</h2>
+            <label for="teamName">Name:</label>
+            <input type="text" id="teamName" name="teamName" required>
+
+            <label for="teamRole">Role:</label>
+            <input type="text" id="teamRole" name="teamRole" required>
+
+            <label for="teamPhoto">Upload Photo:</label>
+            <input type="file" id="teamPhoto" name="teamPhoto" accept="image/*" required>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <form id="cardsForm">
+            <h2>Cards Form</h2>
+            <label for="cardTitle">Title:</label>
+            <input type="text" id="cardTitle" name="cardTitle" required>
+
+            <label for="cardDescription">Description:</label>
+            <input type="text" id="cardDescription" name="cardDescription" required>
+
+            <label for="cardPhoto">Upload Photo:</label>
+            <input type="file" id="cardPhoto" name="cardPhoto" accept="image/*" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <section id="teamDataSection">
+        <h2>Team Data</h2>
+        <!-- Content for displaying team data will go here -->
+    </section>
+
+    <section id="cardsDataSection">
+        <h2>Cards Data</h2>
+        <!-- Content for displaying cards data will go here -->
+    </section>
+    <script src="JS/admin.js"></script>
+</body>
+</html>
