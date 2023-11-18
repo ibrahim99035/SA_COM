@@ -105,3 +105,15 @@ section h2 {
 h3, p {
   margin: 10px 0;
 }
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    form, section {
+        max-width: 100%;
+    }
+
+    .team-member-image, .card-image {
+        max-width: 100%;
+        max-height: none;
+    }
+}
