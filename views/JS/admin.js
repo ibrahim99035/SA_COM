@@ -1,8 +1,12 @@
+const teamDataSection = document.getElementById('teamDataSection');
+const cardsDataSection = document.getElementById('cardsDataSection');
+
+const UpdateButtons = document.getElementsByClassName('Updateor');
+const deleteButtons = document.getElementsByClassName('Terminator');
+
 document.addEventListener('DOMContentLoaded', () => {
     const teamForm = document.getElementById('teamForm');
     const cardsForm = document.getElementById('cardsForm');
-    const teamDataSection = document.getElementById('teamDataSection');
-    const cardsDataSection = document.getElementById('cardsDataSection');
   
     teamForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -123,14 +127,61 @@ async function fetchTeamData() {
 }
 
 async function fetchCardsData() {
-    try {
-        const response = await fetch('/admin/cards');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching cards data:', error);
-        throw error;
-    }
+  try {
+    const response = await fetch('/admin/cards');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching cards data:', error);
+    throw error;
+  }
+}
+
+// async function updateTeamMemeber(id){
+//   try{
+//     const response = await fetch('');
+//     const data = await response.json();
+//     return data;
+//   } catch (error){
+//     console.error('Error Updating Team Member Data:', error);
+//     throw error;
+//   }
+// }
+
+function openUpdateTeamPopup(teamMember){
+  document.getElementById('TeamupdatePopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
+function closeUpdateTeamPopup() {
+  document.getElementById('TeamupdatePopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function openUpdateCardPopup(teamMember){
+  document.getElementById('CardupdatePopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
+function closeUpdateCardPopup() {
+  document.getElementById('CardupdatePopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function openDeleteMemberPopup(route){
+  document.getElementById('MemberDeletePopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
+function closeDeleteMemberPopup() {
+  document.getElementById('MemberDeletePopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+}
+
+function openDeleteCardPopup(route){
+  document.getElementById('CardDeletePopup').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+}
+function closeDeleteCardPopup() {
+  document.getElementById('CardDeletePopup').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
 }
 
 function renderTeamData(teamData) {
@@ -141,7 +192,31 @@ function renderTeamData(teamData) {
     teamData.forEach((teamMember) => {
       const teamMemberContainer = document.createElement('div');
       teamMemberContainer.className = 'team-member';
-  
+      const newLine = document.createElement('br');
+
+      const updateButton = document.createElement('button');
+      updateButton.innerText = 'Update'
+      updateButton.className = 'Updateor'
+      const updateIcon = document.createElement('i');
+      updateIcon.className = 'fas fa-edit update-icon';
+      updateButton.appendChild(updateIcon);
+      // Add event listener for update action if needed
+      updateButton.addEventListener('click', () => {
+        openUpdateTeamPopup(teamMember);
+      });
+
+      const deleteButton = document.createElement('button');
+      deleteButton.innerText = 'Delete'
+      deleteButton.className = 'Terminator'
+      const deleteIcon = document.createElement('i');
+      deleteIcon.className = 'fas fa-trash-alt delete-icon';
+      deleteButton.appendChild(deleteIcon);
+      const route = `/admin/teams/${teamMember.id}`;
+      // Add event listener for delete action if needed
+      deleteButton.addEventListener('click', () => {
+        openDeleteMemberPopup(route);
+      });
+
       const teamMemberImage = document.createElement('img');
       teamMemberImage.src = `images/assets/${teamMember.photo}`;
       teamMemberImage.alt = `Team Member ${teamMember.id}`;
@@ -153,6 +228,9 @@ function renderTeamData(teamData) {
       const teamMemberRole = document.createElement('p');
       teamMemberRole.textContent = teamMember.role;
   
+      teamMemberContainer.appendChild(updateButton);
+      teamMemberContainer.appendChild(deleteButton);
+      teamMemberContainer.appendChild(newLine);
       teamMemberContainer.appendChild(teamMemberImage);
       teamMemberContainer.appendChild(teamMemberName);
       teamMemberContainer.appendChild(teamMemberRole);
@@ -169,7 +247,31 @@ function renderCardsData(cardsData) {
     cardsData.forEach((card) => {
       const cardContainer = document.createElement('div');
       cardContainer.className = 'card';
-  
+
+      const newLine = document.createElement('br');
+
+      const updateButton = document.createElement('button');
+      updateButton.innerText = 'Update'
+      updateButton.className = 'Updateor'
+      const updateIcon = document.createElement('i');
+      updateIcon.className = 'fas fa-edit update-icon';
+      updateButton.appendChild(updateIcon);
+      // Add event listener for update action if needed
+      updateButton.addEventListener('click', () => {
+        openUpdateCardPopup(cardsData);
+      });
+
+      const deleteButton = document.createElement('button');
+      deleteButton.innerText = 'Delete'
+      deleteButton.className = 'Terminator'
+      const deleteIcon = document.createElement('i');
+      deleteIcon.className = 'fas fa-trash-alt delete-icon';
+      deleteButton.appendChild(deleteIcon);
+      // Add event listener for delete action if needed
+      const route = `/admin/cards/${card.id}`
+      deleteButton.addEventListener('click', () => {
+        openDeleteCardPopup(route);
+      });
       const cardImage = document.createElement('img');
       cardImage.src = `images/assets/${card.photo}`;
       cardImage.alt = `Card ${card.id}`;
@@ -181,6 +283,9 @@ function renderCardsData(cardsData) {
       const cardDescription = document.createElement('p');
       cardDescription.textContent = card.description;
   
+      cardContainer.appendChild(updateButton);
+      cardContainer.appendChild(deleteButton);
+      cardContainer.appendChild(newLine);
       cardContainer.appendChild(cardImage);
       cardContainer.appendChild(cardTitle);
       cardContainer.appendChild(cardDescription);

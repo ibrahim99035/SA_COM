@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js" integrity="sha512-mceGQCYWZuRNu27jG8kIrAWT++MIJ1HUEiXy0BTJNkuJEeislqxEZ1KIyfHNMh2YWYAf3oCumvhFV5VYoFfVlA==" crossorigin="anonymous"></script>
+ 
     <title>Admin Interface</title>
 </head>
 <body>
@@ -21,7 +23,7 @@
             <label for="teamPhoto">Upload Photo:</label>
             <input type="file" id="teamPhoto" name="teamPhoto" accept="image/*" required>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="SubmitButtons">
         </form>
 
         <form id="cardsForm">
@@ -35,19 +37,85 @@
             <label for="cardPhoto">Upload Photo:</label>
             <input type="file" id="cardPhoto" name="cardPhoto" accept="image/*" required>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="SubmitButtons">
         </form>
     </div>
+    
+    <div id="TeamupdatePopup" class="popup">
+        <h2>Update Team Member Information</h2>
+        <form action="" id="TeamNameUpdateForm">
+            <label for="teamNameUpdate">Name:</label>
+            <input type="text" id="teamNameUpdate" name="teamNameUpdate" required>
 
-    <section id="teamDataSection">
-        <h2>Team Data</h2>
-        <!-- Content for displaying team data will go here -->
-    </section>
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <form action="" id="TeamRoleUpdateForm">
+            <label for="teamRoleUpdate">Role:</label>
+            <input type="text" id="teamRoleUpdate" name="teamRoleUpdate" required>
 
-    <section id="cardsDataSection">
-        <h2>Cards Data</h2>
-        <!-- Content for displaying cards data will go here -->
-    </section>
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <form action="" id="TeamPhotoUpdateForm">
+            <label for="teamPhotoUpdate">Upload Photo:</label>
+            <input type="file" id="teamPhotoUpdate" name="teamPhotoUpdate" accept="image/*" required>
+
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <button onclick="closeUpdateTeamPopup()" class="popupclose">Close</button>
+    </div>
+
+    <div id="CardupdatePopup" class="popup">
+        <h2>Update Card Information</h2>
+        <form action="" id="cardTitleUpdateForm">
+            <label for="cardTitleUpdate">Title:</label>
+            <input type="text" id="cardTitleUpdate" name="cardTitleUpdate" required>
+
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <form action="" id="cardDescriptionUpdateForm">
+            <label for="cardDescriptionUpdate">Description:</label>
+            <input type="text" id="cardDescriptionUpdate" name="cardDescriptionUpdate" required>
+
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <form action="" id="cardPhotoUpdateForm">
+            <label for="cardPhotoUpdate">Upload Photo:</label>
+            <input type="file" id="cardPhotoUpdate" name="cardPhotoUpdate" accept="image/*" required>
+
+            <input type="submit" value="Submit" class="SubmitButtons">
+        </form>
+        <button onclick="closeUpdateCardPopup()" class="popupclose" >Close</button>
+    </div>
+
+    <div id="MemberDeletePopup" class="popup">
+        <h2>Delete Mmeber Information</h2>
+        
+        <button onclick="closeDeleteMemberPopup()" class="popupclose" >Close</button>
+    </div>
+
+    <div id="CardDeletePopup" class="popup">
+        <h2>Delete Card Information</h2>
+        
+        <button onclick="closeDeleteCardPopup()" class="popupclose" >Close</button>
+    </div>
+
+    <!-- Overlay to darken the background when the popup is open -->
+    <div id="overlay" class="overlay"></div>
+
+    <div>
+        <h2 id="teamheading">Team Data</h2>
+        <section id="teamDataSection">
+            <!-- Content for displaying team data will go here -->
+        </section>
+    </div>
+
+    <div>
+        <h2 id="cardsheading">Cards Data</h2>
+        <section id="cardsDataSection">
+            <!-- Content for displaying cards data will go here -->
+        </section>
+    </div>
+
     <script src="JS/admin.js"></script>
 </body>
 </html>
