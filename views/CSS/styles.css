@@ -1,3 +1,21 @@
+/* Customize the scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Change the color of the thumb */
+    border-radius: 6px;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Change the color of the track */
+}
+  
+body{
+    scrollbar-color: #3498db #f1f1f1;
+    scrollbar-width: thin;
+}
 /* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
@@ -12,7 +30,7 @@ body {
 }
 
 .header {
-    background-color: #333;
+    background-color: rgba(8, 43, 109, 0.616);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -39,12 +57,13 @@ body {
 }
 
 .hero {
+    background-image: url("../images/background.jpg");
     background-color: #0086b3;
     color: white;
     text-align: center;
     padding: 60px 0;
+    height: 90vh;
 }
-
 .hero-content h1 {
     font-size: 36px;
     margin-bottom: 20px;
@@ -174,8 +193,10 @@ footer {
 }
 
 .team-member img {
+    width: 200px;
+    height: 300px;
     max-width: 100%;
-    border-radius: 50%;
+    border-radius: 15%;
 }
 
 .team-member h3 {
@@ -185,6 +206,51 @@ footer {
 
 .team-member p {
     font-size: 16px;
+}
+
+.slogan {
+    font-style: italic;
+    color: #555;
+}
+
+/* Subsection Styles */
+.company-info,
+.mission-vision,
+.core-values,
+.future-building {
+    margin-bottom: 30px;
+}
+
+#about h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#about p {
+    color: #555;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about li {
+    margin-bottom: 8px;
+}
+
+#about li strong {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+#map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.75rem;
 }
 
 /* Media queries for mobile devices */
@@ -224,5 +290,9 @@ footer {
     .team-member {
         flex: 0 0 calc(50% - 20px);
         margin: 10px 0;
+    }
+
+    .content {
+        padding: 30px 10px;
     }
 }

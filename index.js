@@ -4,7 +4,7 @@ const multer = require('multer');
 const moment = require('moment');
 
 const app = express();
-const db = new sqlite3.Database('mydatabase.db');
+const db = new sqlite3.Database('database.db');
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.json());
