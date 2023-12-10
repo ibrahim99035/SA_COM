@@ -264,7 +264,7 @@ footer {
         margin: 10px 0;
     }
     .hero{
-        background-image: url("../images/mobile.jpg");
+        background-image: url("../images/mobile.PNG");
     }
     .hero-content h1 {
         font-size: 28px;
@@ -279,6 +279,7 @@ footer {
     .card {
         flex: 0 0 calc(80% - 20px);
         margin: 10px 0;
+        margin: auto;
     }
     
     .chat-section {
