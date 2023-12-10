@@ -266,6 +266,7 @@ footer {
     .hero{
         background-image: url("../images/mobile2.PNG");
         background-repeat: no-repeat;
+        height: 70vh;
     }
     .hero-content h1 {
         font-size: 28px;
