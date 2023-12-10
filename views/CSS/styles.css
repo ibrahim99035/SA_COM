@@ -282,6 +282,7 @@ footer {
         flex: 0 0 calc(80% - 20px);
         margin: 10px 0;
         margin: auto;
+        margin-top: 0.5rem;
     }
     
     .chat-section {
